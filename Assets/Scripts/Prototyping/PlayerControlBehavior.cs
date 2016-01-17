@@ -14,6 +14,7 @@ namespace VGDC.Prototyping {
 		void Start () {
 			player = gameObject.GetComponent<PlayerBehavior>();
 			childStart ();
+            
 		}
 
 		/// <summary>
@@ -51,22 +52,32 @@ namespace VGDC.Prototyping {
 
 			// Rotate the camera around the chicken on Y-axis with mouse movement.
 			float mouseYAxis = Input.GetAxis("Mouse Y");
-
+            
+            var yAxisPositiveRotationLimit = 0.15;
+            var yAxisNegativeRotationLimit = -0.15;
+            var yAxisRotationBuffer = 0.01;
+            
 			if(mouseYAxis != 0){
 
 				//Debug.Log(mouseYAxis+" : "+ transform.Find("Main Camera").transform.localRotation);
 
-				if (( mouseYAxis > 0 && transform.Find("Main Camera").transform.localRotation.x > -.2 ) 
-					|| ( mouseYAxis < 0 && transform.Find("Main Camera").transform.rotation.x < .4 ) 
+				if (( mouseYAxis > 0 && transform.Find("Main Camera").transform.localRotation.x > yAxisNegativeRotationLimit ) 
+					|| ( mouseYAxis < 0 && transform.Find("Main Camera").transform.rotation.x < yAxisPositiveRotationLimit ) 
 				) {
 
 					transform.Find("Main Camera").transform.RotateAround(transform.position, transform.TransformDirection(-1,0,0), mouseYAxis * mouseSensitivity);
 
 					//					Quaternion rot = transform.Find("Main Camera").transform.localRotation;
-					//					rot.x = Mathf.Clamp(transform.Find("Main Camera").transform.localRotation.x, -.2f, .4f);
+					//					rot.x = Mathf.Clamp(transform.Find("Main Camera").transform.localRotation.x, -.15f, .2f);
 					//					transform.Find("Main Camera").transform.localRotation = rot;
 
-				}
+				} /* else if (( mouseYAxis > 0 && transform.Find("Main Camera").transform.localRotation.x > yAxisNegativeRotationLimit - yAxisRotationBuffer ) 
+					|| ( mouseYAxis < 0 && transform.Find("Main Camera").transform.rotation.x < yAxisPositiveRotationLimit + yAxisRotationBuffer ) 
+				) {
+                    transform.Find("Main Camera").transform.RotateAround(transform.position, transform.TransformDirection(-1,0,0), mouseYAxis * mouseSensitivity * 0);
+                } else {
+                    transform.Find("Main Camera").transform.RotateAround(transform.position, transform.TransformDirection(-1,0,0), mouseYAxis * mouseSensitivity / 50);
+                } */
 
 
 			}

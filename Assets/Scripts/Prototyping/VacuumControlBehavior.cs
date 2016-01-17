@@ -56,6 +56,10 @@ namespace VGDC.Prototyping {
 					//PlayerBehavior bplayer = bunnies [i].GetComponent<PlayerBehavior>();
 					//bplayer.enabled = true;
 					//bplayer.die ();
+					charge += 0.5f;
+					if (charge > 1.0f) {
+						charge = 1.0f;
+					}
 
 					bunnies[i].GetComponent<PhotonView> ().RPC ("die", bunnies[i].GetComponent<PhotonView>().owner, null);
 				}
@@ -74,7 +78,7 @@ namespace VGDC.Prototyping {
 			GUI.Box (new Rect(10,10, 100,30), "Charge: "+Mathf.Round(charge*100) + " %");
 
 			if (remainingTrapEffectTime != 0) {
-				GUI.Box (new Rect(Screen.width/2-75,Screen.height-40,150,30), "Slowed for: "+remainingTrapEffectTime.ToString("0.00")+" seconds");
+				GUI.Box (new Rect(Screen.width/2-75,Screen.height-40,150,30), "Slowed for: "+remainingTrapEffectTime.ToString("0.0")+" seconds");
 			}
 
 		}
@@ -82,7 +86,11 @@ namespace VGDC.Prototyping {
 		void OnTriggerEnter(Collider other) {
 
 			if (other.transform.tag == "Battery") {
-				charge = 1f;
+				charge += 0.25f;
+				if (charge > 1.0f) {
+					charge = 1.0f;
+				}
+				Destroy (other.gameObject);
 				PhotonNetwork.Destroy (other.gameObject);
 			}
 

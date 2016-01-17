@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 namespace VGDC.Prototyping {
 
@@ -43,6 +44,11 @@ namespace VGDC.Prototyping {
 		[PunRPC]
 		public void die(){
 			PhotonNetwork.Destroy (gameObject );
+		}
+
+		[PunRPC]
+		public void setName(string name){
+			gameObject.GetComponentInChildren<Text> ().text = name;
 		}
 			
 

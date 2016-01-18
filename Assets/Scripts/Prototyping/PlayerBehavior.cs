@@ -14,6 +14,10 @@ namespace VGDC.Prototyping {
 
 		[SerializeField]
 		float gravity = 20.0F;
+		
+		float jumpCooldownTime = 1f;
+
+		private bool isBunny = false;
 
 
 		// Use this for initialization
@@ -21,11 +25,18 @@ namespace VGDC.Prototyping {
 
 			controller = GetComponent<CharacterController> ();
 
+			// Determine if this is a bunny
+			if ( GetComponent<BunnyControlBehavior> () ) {
+				isBunny = true;
+			}
+
 		}
-			
 
 		// Update is called once per frame
 		void Update () {
+
+			// Update jump cooldown
+			jumpCooldownTime = Mathf.Clamp (jumpCooldownTime - Time.deltaTime, 0, 1000);
 
 			lookAtTargetUpdate ();
 
@@ -62,7 +73,7 @@ namespace VGDC.Prototyping {
 			
 
 		/// <summary>
-		/// Update of the chicken movement of anything outside of external control.
+		/// Update of the player movement of anything outside of external control.
 		/// This includes things like gravity.
 		/// </summary>
 		void movementUpdate(){
@@ -73,8 +84,19 @@ namespace VGDC.Prototyping {
 			moveDown.y = movementDirection.y;
 			controller.Move (moveDown*Time.deltaTime);
 
-		}
+			// Weaken gravity if we're standing still
+			if (controller.isGrounded) {
+				movementDirection.y = 0;
+			}
 
+			// Jump
+			if (Input.GetKey (KeyCode.Space) && canJump() ) {
+				movementDirection.y = 5;
+				jumpCooldownTime = 1f;
+			}
+
+		}
+		
 
 			
 		void rotateLeft(){
@@ -186,12 +208,24 @@ namespace VGDC.Prototyping {
 		/// <returns><c>true</c>, if can move, <c>false</c> otherwise.</returns>
 		bool canMove (){
 
+			return true;
+
+			// DEBUG
 			if (controller.isGrounded) {
 				return true;
 			}
 
 			return false;
 
+		}
+		
+		// Define capability of jump in a bool state
+		private bool canJump(){
+			if (isBunny) {
+				return jumpCooldownTime <= 0;
+			} else {
+				return false;
+			}
 		}
 
 		float percentageOfDirtEaten = -1f;

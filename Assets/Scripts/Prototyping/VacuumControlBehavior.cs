@@ -30,7 +30,7 @@ namespace VGDC.Prototyping {
 				statusLight.color = new Color (0, 153f/255f , 152f/255f);
 			}
 
-			if (Input.GetKey (KeyCode.Space) && charge > 0f && remainingTrapEffectTime == 0f) {
+			if (Input.GetKey (KeyCode.LeftShift) && charge > 0f && remainingTrapEffectTime == 0f) {
 				player.setSpeed (originalSpeed * boostMultiplier);
 				degradeCharge ();
 				statusLight.color = Color.red;

@@ -18,7 +18,7 @@ namespace VGDC.Prototyping {
 		{
 			trapCooldownTime = Mathf.Clamp (trapCooldownTime - Time.deltaTime, 0, 1000);
 			
-			if (Input.GetKey (KeyCode.Space) && canPlaceTrap() ) {
+			if (Input.GetKey (KeyCode.E) && canPlaceTrap() ) {
 
 				trapCooldownTime = 5f;
 
@@ -39,7 +39,7 @@ namespace VGDC.Prototyping {
 
 		void OnGUI(){
 			if (trapCooldownTime != 0) {
-				GUI.Box (new Rect(Screen.width/2-55,Screen.height-40,150,30), "Trap cooldown: "+trapCooldownTime.ToString("0.0")+" seconds");
+				GUI.Box (new Rect(Screen.width/2-75,Screen.height-40,175,30), "Trap cooldown: "+trapCooldownTime.ToString("0.0")+" seconds");
 			}
 			
 		}

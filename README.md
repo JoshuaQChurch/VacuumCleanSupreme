@@ -22,7 +22,8 @@ Spring 2016 Semester Project
 
 ### 3. Check out our site.
  
-http://videogamedev.club
+http://videogamedev.club 
+
 We'll be giving club and project updates, useful information, and project game builds.
 
 ### 4. Familiarize yourself with the documentation and project programming standards.

@@ -44,7 +44,7 @@ We'll be giving club and project updates, useful information, and project game b
 
 **More Tutorials**: https://guides.github.com
 
-### 6. Create a fork and make some contributions!
-Now that you've downloaded Unity and become familiar with the basics, it's time to jump in and make something great! Just clone the project, open it, and start on a task. Below are things we're currently working on.
+### 6. Create a fork and make some contributions.
+Now that you've downloaded Unity and become familiar with the basics, it's time to jump in and make something great. Just clone the project, open it, and start on a task. Below are things we're currently working on.
 
 **To-do list**: [insert online to-do list here]

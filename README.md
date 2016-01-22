@@ -5,6 +5,8 @@ http://videogamedev.club
 
 #####Try out the web version of the game: http://videogamedev.club/VacuumBuild/
 
+[Join the VGDC Telegram group](https://telegram.me/joinchat/Bluy8QIW4BoaQBZs2t3CGA).
+
 
 ### Getting Started on the Project
 
@@ -58,7 +60,7 @@ There are many ways to contribute to the project, such as play-testing, contribu
 
 - If you find a bug or problem, first go to the [Issues section](https://github.com/VideoGameDevClub/VacuumCleanSupreme/issues) of the repository to check if the bug or problem has already been reported. If it has not already been reported, [open a new issue](https://github.com/VideoGameDevClub/VacuumCleanSupreme/issues/new) and give a detailed explanation of the issue and any suggestions for a solution.
 
-If you need any further assistance, contact ecd157@msstate.edu.
+If you need any further assistance, contact ecd157@msstate.edu or post in the [VGDC Telegram group](https://telegram.me/joinchat/Bluy8QIW4BoaQBZs2t3CGA).
 
 
 ### Extra Stuff

@@ -23,7 +23,7 @@ Unity can take a while to download, so pass the time by getting down the basics.
 
 - [More Unity Tutorials](https://unity3d.com/learn/tutorials)
 
-#### 3. Check out our documentation and programming formatting suggestions.
+#### 3. Check out our documentation and project standards.
 [VideoGameDev.Club](http://videogamedev.club) 
 
 We will be sharing club and project updates, useful information and tutorials, and a preview of the current game build.
@@ -31,7 +31,7 @@ We will be sharing club and project updates, useful information and tutorials, a
 - Project Documentation: 
   - [Mockup Object Model Diagram](http://videogamedev.club/?page=GamePlans)
 
-- Programming formatting suggestions can be found at the end of this document.
+- Project standards and programming formatting suggestions can be found at the end of this document.
 
 #### 4. Learn how to use Git and GitHub.
 

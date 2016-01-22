@@ -44,7 +44,13 @@ We'll be giving club and project updates, useful information, and project game b
 
 - More GitHub Tutorials: https://guides.github.com
 
-#### 6. Create a fork and make some contributions.
-Now that you've downloaded Unity and become familiar with the basics, it's time to jump in and make something great. Just clone the project, open it, and start on a task. Below are things we're currently working on.
+#### 6. Install ZenHub for built-in to-do lists.
 
-**To-do list**: [insert online to-do list here]
+- Add ZenHub here: https://zenhub.io/
+
+- (Optional) Check out the Issues and Boards page over here: https://github.com/VideoGameDevClub/VacuumCleanSupreme/issues
+
+#### 7. Create a fork and make some contributions.
+Whew! Now that you've downloaded Unity and become familiar with the basics, it's time to jump in and make something great. Just clone the project, open it, and start on a task. Below are things we're currently working on.
+
+**To-do list**: https://github.com/VideoGameDevClub/VacuumCleanSupreme/issues

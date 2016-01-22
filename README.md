@@ -1,7 +1,9 @@
 # VacuumCleanSupreme
 Spring 2016 Semester Project
 
-#####Try out the web version of our game: http://videogamedev.club/VacuumBuild/
+http://videogamedev.club
+
+#####Try out the web version of the game: http://videogamedev.club/VacuumBuild/
 
 
 ### Getting Started on the Project
@@ -13,29 +15,27 @@ Spring 2016 Semester Project
  
 - [Unity for Windows](https://unity3d.com/get-unity/download?thank-you=update&download_nid=24110&os=Win)
 
-#### 2. Check out a few Unity tutorials (if you are new).
+#### 2. Read or watch some Unity tutorials.
 
 Unity can take a while to download, so pass the time by getting down the basics.
 
-- [Introduction to Unity](https://unity3d.com/learn/tutorials/topics/interface-essentials)
+- [Getting Started with Unity](http://docs.unity3d.com/Manual/GettingStarted.html)
 
-- [Using C# Scripting](https://unity3d.com/learn/tutorials/topics/scripting)
+- [Introduction to Unity's UI](https://unity3d.com/learn/tutorials/topics/interface-essentials)
+
+- [Scripting in C#](https://unity3d.com/learn/tutorials/topics/scripting)
 
 - [More Unity Tutorials](https://unity3d.com/learn/tutorials)
 
-#### 3. Check out our documentation and project standards.
-[VideoGameDev.Club](http://videogamedev.club) 
-
-We will be sharing club and project updates, useful information and tutorials, and a preview of the current game build.
+#### 3. Familiarize yourself with the documentation and project standards.
 
 - Project Documentation: 
   - [Mockup Object Model Diagram](http://videogamedev.club/?page=GamePlans)
-
-- Project standards and programming formatting suggestions can be found at the end of this document.
+- Project standards and programming conventions can be found at the end of this document.
 
 #### 4. Learn how to use Git and GitHub.
 
-- (Recommended App) [GitHub Desktop](https://desktop.github.com)
+- [GitHub Desktop](https://desktop.github.com) (Recommended App)
 
 - [Set Up Git](https://help.github.com/articles/set-up-git/)
 
@@ -43,18 +43,28 @@ We will be sharing club and project updates, useful information and tutorials, a
 
 - [Different Ways of Contributing](https://guides.github.com/activities/contributing-to-open-source/#contributing)
 
-- [More GitHub Tutorials for Later](https://guides.github.com)
+- [More GitHub Tutorials](https://guides.github.com)
 
-#### 5. [Follow this guide to create a fork](http://imgur.com/a/D5Ee6) and start contributing.
+#### 5. Find out how to contribute.
+There are many ways to contribute to the project, such as play-testing, contributing to the project’s source code, creating assets and art, and finding and reporting bugs. 
 
-Now that you have downloaded Unity and have become familiar with the basics, it is time to jump in and make something great. Just clone the project, open it, and start on a task. Below are things we are currently working on.
+- To contribute to the project’s source code, [create a fork](http://imgur.com/a/D5Ee6), modify your fork, and [submit a pull request](https://help.github.com/articles/using-pull-requests/). Things currently being worked on or needing attention can be found in the [Issues section](https://github.com/VideoGameDevClub/VacuumCleanSupreme/issues).
 
-**Task list**: https://github.com/VideoGameDevClub/VacuumCleanSupreme/issues
+- Creation of assets and art encompasses multiple things, including creation of 3D models, textures, sound effects, particle effects, interface elements, and animations. There are many free and paid utilities that may be used for producing each of these things. Below are some recommended apps that can be downloaded for free.
+	- For 3D models, [SketchUp (Windows, Mac)](http://www.sketchup.com) or [Blender (Windows, Mac, GNU/Linux)](https://www.blender.org)
+	- For creating textures, [Gimp (Windows, Mac, GNU/Linux)] (https://www.gimp.org/downloads/) or [Pixelmator (Mac)](http://www.pixelmator.com/mac/try/) (free for 30 days)
+	- For sound effects, [Audacity (Windows, Mac, GNU/Linux)](http://audacityteam.org) or [GarageBand (Mac)](http://www.apple.com/mac/garageband/)
+	- Particle effects, interface elements, and animations can be created within Unity on [Mac](http://unity3d.com/get-unity/download?thank-you=update&download_nid=24110&os=Mac) and [Windows](http://unity3d.com/get-unity/download?thank-you=update&download_nid=24110&os=Win).
+
+- If you find a bug or problem, first go to the [Issues section](https://github.com/VideoGameDevClub/VacuumCleanSupreme/issues) of the repository to check if the bug or problem has already been reported. If it has not already been reported, [open a new issue](https://github.com/VideoGameDevClub/VacuumCleanSupreme/issues/new) and give a detailed explanation of the issue and any suggestions for a solution.
+
+If you need any further assistance, contact ecd157@msstate.edu.
+
 
 ### Extra Stuff
 
 #### Install ZenHub for integrated to-do lists on GitHub.
-Zenhub changes the format of the Issues tab for a new way of organizing your issues and tracking stats. This extension is not required to be able to work on this project. 
+Zenhub changes the format of the Issues section for a new way of organizing your issues and tracking stats. This extension is not required to be able to work on this project. 
 
 - Add ZenHub here: https://zenhub.io/
 
@@ -87,7 +97,7 @@ These are just a few standards that we would like contributions to follow for co
   * Ex: If script x is under Scripts > GameManagement, then the script's namespace will be ```VGDC.GameManagement```
   * Ex. If script y is under Scripts > Characters > Player > Weapons, then the script's namespace will be ```VGDC.Characters.Player.Weapons```
   
-### Programming Formatting Suggestions
+### Programming Conventions
 These are just suggestions that have made our time coding in Unity easier.
 * When having a function being called inside of one of [MonoBehavior's messages](http://docs.unity3d.com/ScriptReference/MonoBehaviour.html) ( ex: ```Update()``` ), then that function should end in that message's name.
   * This makes programming state machine's easier.  The ```Update()``` contains a switch statement that calls the appropriate function based on the state.

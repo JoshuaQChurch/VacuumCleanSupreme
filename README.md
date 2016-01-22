@@ -1,7 +1,7 @@
 # VacuumCleanSupreme
 Spring 2016 Semester Project
 
-#####**Try out the web version our game**: http://videogamedev.club/VacuumBuild/
+#####**Try out the web version of our game**: http://videogamedev.club/VacuumBuild/
 
 ### Getting Started on the Project
 
@@ -44,24 +44,27 @@ We'll be giving club and project updates, useful information, and project game b
 
 - More GitHub Tutorials: https://guides.github.com
 
-#### 6. Install ZenHub for built-in to-do lists.
+#### 6. [Create a fork](http://imgur.com/a/D5Ee6) and make some contributions.
+Now that you've downloaded Unity and become familiar with the basics, it's time to jump in and make something great. Just clone the project, open it, and start on a task. Below are things we're currently working on.
+
+**Task list**: https://github.com/VideoGameDevClub/VacuumCleanSupreme/issues
+
+### Extra Stuff
+
+#### Install ZenHub for integrated to-do lists on GitHub.
+Zenhub changes the format of the Issues tab for a new way of organizing your issues and tracking stats. This extension is not required to be able to work on this project. 
 
 - Add ZenHub here: https://zenhub.io/
 
-- (Optional) Check out the Issues and Boards page over here: https://github.com/VideoGameDevClub/VacuumCleanSupreme/issues
+- After adding ZenHub, check out the new Issues and Boards page here: https://github.com/VideoGameDevClub/VacuumCleanSupreme/issues
 
-#### 7. Create a [fork](http://imgur.com/a/D5Ee6) and make some contributions.
-Whew! Now that you've downloaded Unity and become familiar with the basics, it's time to jump in and make something great. Just clone the project, open it, and start on a task. Below are things we're currently working on.
+#### Go through a Photon tutorial.
+This project utilizes the networking features of a Unity plugin you can find on their asset store called Photon. This plugin/service allows us to keep things simple by not having to set up our own server for listening and sending calls. This plugin also makes writing network code *extremely* simple.  
 
-**To-do list**: https://github.com/VideoGameDevClub/VacuumCleanSupreme/issues
-
-#### 8. (Recommended) Go through a Photon tutorial!
-This project utilizes the networking features of a Unity plugin you can find on their asset store called Photon.  This plugin/service allows us to keep things simple by not having to set up our own server for listening and sending calls.  This plugin also makes writing network code **Extremely** simple.  
-
-I suggest creating an empty project on your machine and just going through their [marco polo tutorial](https://doc.photonengine.com/en/pun/current/tutorials/tutorial-marco-polo).  This tutorial takes no longer than an hour and afterwords you'll have a good idea what's going on whenever you see/write networking code.
+I suggest creating an empty project on your machine and just going through their [Marco Polo tutorial](https://doc.photonengine.com/en/pun/current/tutorials/tutorial-marco-polo).  This tutorial takes no longer than an hour, and afterwords you'll have a good idea of what's going on whenever you see/write networking code.
 
 ### Project Standards
-These are just a few standards that we would like the repository to follow for consistancy's sake.  When you submit a PR we will make sure your changes follow these standards and if not ask you to make the appropriate changes so they do.
+These are just a few standards that we would like the repository to follow for consistency's sake.  When you submit a PR we will make sure your changes follow these standards, and, if not, we will ask you to make the appropriate changes so that they do.
 
 * All code written will be under the Scripts folder!
 * Folders, file names, enums, and enum constants should be done in camel case beggining in a capital letter
@@ -79,11 +82,11 @@ These are just a few standards that we would like the repository to follow for c
   * To quickly add a summary to a class or function, move the cursor to above the declaration of a class slash function and enter '///'.  This in both Mono and VS start a nice body for the description of the class / function.
 * **0 public variables.**  To get a variable's value or set it create the appropriate getter and setter methods.
 * Namespace convention: Preface with VGDC, and every parent folder the script is contained in will come after. (Ignoring the Script folder)
-  * Ex: If a script x is under Scripts>GameManagement, then it's namespace will be VGDC.GameManagement
-  * Ex. If a script y is under Scripts>Characters>Player>Weapons, this it's namespace will be VGDC.Characters.Player.Weapons
+  * Ex: If script x is under Scripts > GameManagement, then the script's namespace will be VGDC.GameManagement
+  * Ex. If script y is under Scripts > Characters > Player > Weapons, then the script's namespace will be VGDC.Characters.Player.Weapons
   
 ### Programming Suggestions
-These are just suggestions that have made Eli's time coding in Unity easier.
+These are just suggestions that have made our time coding in Unity easier.
 * When having a function being called inside of one of [MonoBehavior's messages](http://docs.unity3d.com/ScriptReference/MonoBehaviour.html) ( ex: Update() ), then that function should end in that message's name.
   * This makes programming state machine's easier.  The Update() contains a switch statement that calls the appropriate function based on the state.
   * ex: In Flee state, FleeUpdate() is a method that is called inside of [Update](http://docs.unity3d.com/ScriptReference/MonoBehaviour.Update.html).  

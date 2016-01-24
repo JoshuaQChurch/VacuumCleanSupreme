@@ -7,6 +7,7 @@
 * **Rounds :** 3
 * **Scenes :** *To be determined*
 * **Cooperation Type :** Bunnies Vs Vacuums
+
 ### Description
 In the game mode *Protect the queen*, one of the 3 bunnies is assigned the status *Queen*.  
 The queen can not place traps, but the other 2 bunnies can with the traps having a 10 second lifespwn.  

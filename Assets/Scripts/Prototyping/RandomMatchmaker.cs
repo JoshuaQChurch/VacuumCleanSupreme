@@ -57,11 +57,7 @@ namespace VGDC.Prototyping {
 			Debug.Log("Can't join random room!");
 			PhotonNetwork.CreateRoom(null);
 		}
-
-		void OnJoinedRoom()
-		{
-			
-		}
+		
 
 		void spawnAs(string toSpawnAs) {
 

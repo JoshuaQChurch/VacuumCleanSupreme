@@ -3,16 +3,16 @@ using System.Collections;
 
 namespace VGDC.Character {
 
-	public class CharacterBehavior : MonoBehaviour {
+	public abstract class CharacterBehavior : MonoBehaviour {
 
-		private string name;
+		private string characterName;
 
 		public string getName(){
-			return name;
+			return characterName;
 		}
 
 		void Start(){
-			name = "";
+			characterName = "";
 		}
 
 	}

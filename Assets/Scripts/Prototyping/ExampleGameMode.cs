@@ -16,11 +16,20 @@ namespace VGDC.Prototyping {
 			// initialize player kills to 0.
 		}
 
+
 		public void onCharacterDeath(CharacterBehavior character){
 
-			Debug.Log (""+character.getName()+" has died!");
+			Debug.Log (character.getName()+" has died!");
 
 		}
+
+
+		public void onCharacterAdd(CharacterBehavior character){
+
+			Debug.Log (character.getName() + " has been added to the scene!");
+
+		}
+
 
 	}
 

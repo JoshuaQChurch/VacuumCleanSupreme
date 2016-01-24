@@ -10,6 +10,8 @@ namespace VGDC.GameManagement {
 
 		void onCharacterDeath(CharacterBehavior character);
 
+		void onCharacterAdd(CharacterBehavior character);
+
 	}
 
 }

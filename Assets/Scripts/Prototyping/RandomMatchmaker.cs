@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Photon;
+using VGDC.Notification;
 
 namespace VGDC.Prototyping {
 

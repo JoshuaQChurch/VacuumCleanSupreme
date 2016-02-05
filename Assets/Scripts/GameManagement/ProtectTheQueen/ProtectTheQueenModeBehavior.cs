@@ -2,6 +2,7 @@
 using System.Collections;
 using VGDC.GameManagement;
 using VGDC.Character;
+using VGDC.Notification;
 
 namespace VGDC.GameManagement.ProtectTheQueen {
 
@@ -12,7 +13,7 @@ namespace VGDC.GameManagement.ProtectTheQueen {
 	/// If the round ends and the queen is still alive, the bunnies won.  
 	/// The Vacuum wins if it consumes the queen before the time limit.  
 	/// </summary>
-	public class ProtectTheQueenModeBehavior : MonoBehaviour, GameMode {
+	public class ProtectTheQueenModeBehavior :  GameMode {
 
 		/// <summary>
 		/// The time in the game when we last spawned the battery.
@@ -64,7 +65,7 @@ namespace VGDC.GameManagement.ProtectTheQueen {
 		/// <summary>
 		/// Initializes the round
 		/// </summary>
-		public void onGameStart(){
+		public override void onGameStart(){
 
 			currentRound ++;
 
@@ -83,7 +84,7 @@ namespace VGDC.GameManagement.ProtectTheQueen {
 		/// When a bunny dies
 		/// </summary>
 		/// <param name="character">Character.</param>
-		public void onCharacterDeath(CharacterBehavior character){
+		public override void onCharacterDeath(CharacterBehavior character){
 
 			// If the queen was killed
 			if (bunnyQueen.Equals (character)) {
@@ -107,9 +108,21 @@ namespace VGDC.GameManagement.ProtectTheQueen {
 		/// Play a cool effect when a character is spawned
 		/// </summary>
 		/// <param name="character">Character.</param>
-		public void onCharacterAdd(CharacterBehavior character){
+		public override void onCharacterAdd(CharacterBehavior character){
 			//TODO play a cool effect when a character is spawned
+			NotificationSystem.createNotification("A player has spawned!",2f);
 		}
+
+
+		/// <summary>
+		/// The vacuum gains back only a quater of it's charge when it consumes a battery
+		/// </summary>
+		/// <param name="vacuum">Vacuum.</param>
+		public override void onVacuumBatteryConsumption (VacuumBehavior vacuum)
+		{
+			vacuum.setCharge (vacuum.getCharge() +.25f);
+		}
+
 
 		// Update is called once per frame
 		void Update () {
@@ -202,7 +215,7 @@ namespace VGDC.GameManagement.ProtectTheQueen {
 		/// Spawns a battery randomly in the scene
 		/// </summary>
 		private void spawnBattery(){
-			// TODO implement battery spawn :(
+			Consumables.ConsumableFactory.createConsumable (VGDC.Consumables.ConsumableType.Battery, Vector3.zero);
 		}
 
 

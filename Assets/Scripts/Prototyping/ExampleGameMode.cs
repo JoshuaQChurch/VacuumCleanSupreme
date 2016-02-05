@@ -5,11 +5,11 @@ using VGDC.Character;
 
 namespace VGDC.Prototyping {
 
-	public class ExampleGameMode : MonoBehaviour,GameMode {
+	public class ExampleGameMode : GameMode {
 
 		private int[] playerKills = null;
 
-		public void onGameStart(){
+		public override void onGameStart(){
 
 			// Do what you want when you 
 
@@ -17,14 +17,14 @@ namespace VGDC.Prototyping {
 		}
 
 
-		public void onCharacterDeath(CharacterBehavior character){
+		public override void onCharacterDeath(CharacterBehavior character){
 
 			Debug.Log (character.getName()+" has died!");
 
 		}
 
 
-		public void onCharacterAdd(CharacterBehavior character){
+		public override void onCharacterAdd(CharacterBehavior character){
 
 			Debug.Log (character.getName() + " has been added to the scene!");
 

@@ -148,6 +148,16 @@ namespace VGDC.GameManagement {
 		}
 
 
+
+		public void notifyVacuumBatteryConsumption(VacuumBehavior vacuum){
+
+			if (currentModeBeingPlayed != null) {
+				currentModeBeingPlayed.onVacuumBatteryConsumption (vacuum);
+			}
+
+		}
+
+
 		/// <summary>
 		/// Private constructor garunteeing only the class can initialize an instance of itself
 		/// </summary>
@@ -157,7 +167,6 @@ namespace VGDC.GameManagement {
 			charactersInScene = new List<CharacterBehavior> ();
 
 		}
-
 
 	}
 

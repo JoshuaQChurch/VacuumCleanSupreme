@@ -34,6 +34,8 @@ namespace VGDC.Settings {
 
 		string picURL;
 
+		private static bool currentlyLoading = false;
+
 		private OnlineSettings(){
 			usename = "Guest";
 			picURL = "http://med-fom-endocrinology.sites.olt.ubc.ca/files/2012/08/cropped-profile-place-holder-img18.jpg";
@@ -66,13 +68,19 @@ namespace VGDC.Settings {
 		/// Writes the settings to an xml file
 		/// </summary>
 		private void save(){
-			
+
+			// Can't have multiple filestreams going at once, let's chill
+			if (currentlyLoading) {
+				return;
+			}
+
 			string path = "Storage/OnlineSettings.xml";
 
 			using(FileStream outputFile = File.Create(path)){
 
 				XmlSerializer formatter = new XmlSerializer (typeof(OnlineSettings));
 				formatter.Serialize (outputFile, this);
+				outputFile.Close ();
 
 			}
 
@@ -84,18 +92,19 @@ namespace VGDC.Settings {
 		/// </summary>
 		private static OnlineSettings load(){
 
+			currentlyLoading = true;
+
 			// Load in the new recording
 			XmlSerializer serializer = new XmlSerializer (typeof(OnlineSettings));
 
-			try {
-				using (FileStream fileStream = new FileStream("Storage/OnlineSettings.xml", FileMode.Open)) 
-				{
-					OnlineSettings result = (OnlineSettings) serializer.Deserialize(fileStream );
-					return result;
-				}
-			} catch {
-				return null;
+			using (FileStream fileStream = new FileStream("Storage/OnlineSettings.xml", FileMode.Open)) 
+			{
+				OnlineSettings result = (OnlineSettings) serializer.Deserialize(fileStream);
+				fileStream.Close ();
+				return result;
 			}
+
+			currentlyLoading = false;
 
 		}
 
